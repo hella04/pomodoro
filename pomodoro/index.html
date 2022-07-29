@@ -2,9 +2,7 @@
 <html>
   <head>
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <script src="main.js"></script>
-  
+    <link rel="stylesheet" href="./style.css"/>  
   </head>
   <body onload="template()">
     <div class="container">
@@ -26,7 +24,7 @@
 
 
     <div class="controls">
-        <button class="start" onclick="start_timer()">Start</button>
+        <button id="main" class="start" onclick="start_timer()">Start</button>
         <button class="reset" onclick="reset_timer()">Reset</button>
     </div>
    <div class="container_settings">
@@ -77,4 +75,6 @@
     </div>
    </div> 
   </body>
+
+  <script src="main.js"></script>
 </html>
