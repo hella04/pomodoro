@@ -1,133 +1,80 @@
-let session_seconds = 0;
-let session_minutes = 25;
-
-
-const container_settings = {
-  shortBreak: 5,
-  longBreak: 15,
-  longBreakInterval: 4,
-  sessions: 0,
-};
-
-let isTicking = false;
-
-let beep = new Audio("beep.mp3");
-
-let minutes_interval;
-let seconds_interval;
+const startButton = document.getElementById('main');
+const timeLabel = document.getElementById('time-label');
+const resetButton = document.getElementById('resbutton');
+const breakButton = document.getElementById('shortbreak');
 
 
 
-const minutesElement = document.getElementById("minutes");
-const secondsElement = document.getElementById("seconds");
-const mainButton = document.getElementById("main");
+let timerIntervalKey;
+const defaultRemainingTime = 4;
 
-function template() {
-  minutesElement.innerHTML = session_minutes;
-  secondsElement.innerHTML = session_seconds;
+let isRunning = false;
+let remainingTime = defaultRemainingTime;
+const shortBreakTime = 2;
 
-  if (!seconds_interval) {
-    mainButton.textContent = "Start";
-    mainButton.classList.remove("active");
-  } else {
-    mainButton.textContent = "Stop";
-    mainButton.classList.add("active");
-  }
-}
-
-function clearTimers() {
-  clearInterval(minutes_interval);
-  clearInterval(seconds_interval);
-  minutes_interval = null;
-  seconds_interval = null;
-}
-
-function start_timer() {
-  template();
-  if (!seconds_interval) {
-    if (session_minutes === 25 && session_seconds === 0) {
-      session_minutes = 24;
-      session_seconds = 59;
+function timerTick() {
+    console.log('this is a timer tick')
+    remainingTime-- //remainingTime= remainingTime-1
+    timeLabel.innerHTML = remainingTime
+    if (remainingTime === 0) {
+        console.log('should change to short break')
+        isRunning = true
+        remainingTime = shortBreakTime
+        timeLabel.innerHTML = remainingTime
+        
+   
+    }
+    if (remainingTime === 0) {
+        console.log('should stop')
+        clearInterval(timerIntervalKey)
+        startButton.innerHTML = 'Start'
+        isRunning = false
+        remainingTime = defaultRemainingTime
+        timeLabel.innerHTML = remainingTime
     }
 
-    minutes_interval = setInterval(minutesTimer, 60000);
-    seconds_interval = setInterval(secondsTimer, 1000);
-  } else {
-    stopTimer();
-  }
-
-  template();
 }
 
-function minutesTimer() {
-  session_minutes = session_minutes - 1;
+function startClick() {
+    if (!isRunning) {
+        console.log('clicka')
+        timerIntervalKey = setInterval(timerTick, 1000)
+        isRunning = true
+        startButton.innerHTML = 'Pause'
 
-  template();
-}
+    } else {
+        clearInterval(timerIntervalKey)
+        isRunning = false
+        startButton.innerHTML = 'Start'
 
-function secondsTimer() {
-  session_seconds = session_seconds - 1;
-
-  if (session_seconds <= 0) {
-    if (session_minutes <= 0) {
-      clearTimers();
-      
-
-      beep.play();
     }
-    session_seconds = 60;
-  }
-  
-  template();
+
 }
 
-function reset_timer() {
-  clearTimers();
-
-  session_minutes = 25;
-  session_seconds = 0;
-
-  template();
-}
-
-function stopTimer() {
-  clearTimers();
-  template();
-}
-
-function container_shortbreak(){
-  addEventListener('click', () => {
-    clearInterval(minutes_interval);
-    clearInterval(seconds_interval);
-    session_minutes = 5;
-    session_seconds = 0;
-  });
-
-  template();
-}
-function container_longbreak(){
-  addEventListener('click', () => {
-    clearInterval(minutes_interval);
-    clearInterval(seconds_interval);
-    session_minutes = 25;
-    session_seconds = 0;
-  });
-
-  template();
+function documentLoaded() {
+    console.log('the document has loaded')
+    timeLabel.innerHTML = remainingTime
 }
 
 
-function decrease_timer(){
-  session_minutes= session_minutes-1;
+startButton.addEventListener('click', startClick);
 
-  template();
+
+document.addEventListener('DOMContentLoaded', documentLoaded);
+
+
+function resetClick() {
+    remainingTime = defaultRemainingTime
+    timeLabel.innerHTML = remainingTime
+
 }
+resetButton.addEventListener('click', resetClick);
+
+function shortBreakClick() {
+    remainingTime = shortBreakTime
+    timeLabel.innerHTML = remainingTime
 
 
-function increase_timer(){
-  session_minutes= session_minutes+1;
 
-  template();
 }
-
-
+breakButton.addEventListener('click', shortBreakClick);

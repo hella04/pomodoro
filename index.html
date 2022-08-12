@@ -1,84 +1,18 @@
-<!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="./style.css"/>  
-  </head>
-  <body onload="template()">
-    <div class="container">
-      <h1>Pomodoro Timer</h1>
-      <div class="container timer">
-          <div class="row">
-            <h2 class="sessions"></h2>
-            <div class="col-5">
-              <h4 id="minutes"></h4>
-            </div>
-            <div class="col-2">
-              <h4>:</h4>
-            </div>
-            <div class="col-5">
-              <h4 id="seconds"></h4>
-            </div>  
-          </div> 
-      </div>     
-    </div>
+    <link rel="stylesheet" href="./style.css" />
+</head>
 
-
+<body>
     <div class="controls">
-        <button id="main" class="start" onclick="start_timer()">Start</button>
-        <button class="reset" onclick="reset_timer()">Reset</button>
+        <button id="main" class="start">Start</button>
+        <label id="time-label"></label>
+        <button id="resbutton" class="reset">Reset</button>
+        <button id="shortbreak" class="break">Short Break</button>
+
     </div>
-   <div class="container_settings">
-      <div class="container_pomodoro">
-        <h3>Pomodoro</h3>
-        <div class="col-5">
-          <h4 id="minutes">25</h4>
-        </div>
-        <div class="col-2">
-          <h4>:</h4>
-        </div>
-        <div class="col-5">
-          <h4 id="seconds">0</h4>
-        </div>  
-        <button class="btn" onclick="decrease_timer()">-</button>
-        <button class="btn" onclick="increase_timer()">+</button>
-        <style>
-          h4, h4, h4 {display:inline;}
-      </style>
-      </div>
-      <div class="container_shortbreak">
-        <h3>Short Break</h3>
-        <div class="col-5">
-          <h4 id="minutes">5</h4>
-        </div>
-        <div class="col-2">
-          <h4>:</h4>
-        </div>
-        <div class="col-5">
-          <h4 id="seconds">0</h4>
-        </div>  
-        <button class="btn" onclick="decrease_timer()">-</button>
-        <button class="btn" onclick="increase_timer()">+</button>
-      </div>
-
-    
-      <div class="container_longbreak">
-        <h3>Long Break</h3>
-        <div class="col-5">
-          <h4 id="minutes">25</h4>
-        </div>
-        <div class="col-2">
-          <h4>:</h4>
-        </div>
-        <div class="col-5">
-          <h4 id="seconds">0</h4>
-        </div>  
-        <button class="btn" onclick="decrease_timer()">-</button>
-        <button class="btn" onclick="increase_timer()">+</button>
-
-      </div>
-   </div> 
-  </body>
-
-  <script src="main.js"></script>
+</body>
+<script src="./main.js"></script>
 </html>
