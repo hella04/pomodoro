@@ -1,0 +1,59 @@
+{
+    "user":[
+        {
+        
+            "id":1,
+            "profile":"",
+            "name":"Logan Henderson",
+            "location":"Chicago, IL",
+            "email":"logan@company.com",
+            "phonenumber":"938-283-9277"
+
+        },
+        {
+            "id":2,
+            "profile":"",
+            "name":"Susie Carlson",
+            "location":"New York, NY",
+            "email":"susie@company.com",
+            "phonenumber":"394-938-9223"
+
+        },
+        {
+            "id":3,
+            "profile":"",
+            "name":"Markus Benes",
+            "location":"San Francisco, CA",
+            "email":"markus@company.com",
+            "phonenumber":"872-993-1029"
+
+        },
+        {
+            "id":4,
+            "profile":"",
+            "name":"Marie Stephensen",
+            "location":"Boston, MA",
+            "email":"marie@company.com",
+            "phonenumber":"928-938-5523"
+
+        },
+        {
+            "id":5,
+            "profile":"",
+            "name":"Jacob Gibson",
+            "location":"Denver, CO",
+            "email":"jacob@company.com",
+            "phonenumber":"192-617-4895"
+
+        },
+        {
+            "id":6,
+            "profile":"",
+            "name":"Eliza Figueroa",
+            "location":"Burlington, VT",
+            "email":"eliza@company.com",
+            "phonenumber":"717-029-2273"
+
+        }
+    ]
+}

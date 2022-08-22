@@ -1,4 +1,44 @@
-body{
-    background-color: black;
-    color: white;
+html{
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    
 }
+
+table{
+    min-width: 100%;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-color: rgb(226 232 240);
+}
+
+
+
+
+thead{
+    background-color: lightgray;
+    
+}
+
+
+th{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-weight: 550;
+
+}
+
+
+td{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    white-space: nowrap;
+
+
+}
+

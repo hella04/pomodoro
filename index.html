@@ -1,18 +1,30 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css"/>
 </head>
 
 <body>
-    <div class="controls">
-        <button id="main" class="start">Start</button>
-        <label id="time-label"></label>
-        <button id="resbutton" class="reset">Reset</button>
-        <button id="shortbreak" class="break">Short Break</button>
+    <input type="text" id="filter">
+    <input type="text" id="sort">
+    <button id="increasebttn">Növekvő</button>
+    <button id="decreasebttn">Csökkenő</button>
+    <table>
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th> Location</th>
+                <th> E-mail</th>
+                <th> Phone number</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+           
+        </tbody>
+    </table>
+    <script src="./main.js"></script>
 
-    </div>
 </body>
-<script src="./main.js"></script>
+
 </html>
