@@ -2,29 +2,41 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./style.css"/>
+    <title>Weight Tracker</title>
+    <h1>Weight Tracker</h1>
+    <link rel="stylesheet" href="./style.css" />
+
 </head>
 
 <body>
-    <input type="text" id="filter">
-    <input type="text" id="sort">
-    <button id="increasebttn">Növekvő</button>
-    <button id="decreasebttn">Csökkenő</button>
-    <table>
-        <thead>
-            <tr>
-                <th> Name</th>
-                <th> Location</th>
-                <th> E-mail</th>
-                <th> Phone number</th>
-            </tr>
-        </thead>
-        <tbody id="tbody">
-           
-        </tbody>
-    </table>
-    <script src="./main.js"></script>
+    <div class="p">
+        <p>Date</p>
+        <p>Weight</p>
+    </div>
+    <input type="date" id="date">
+    <input type="number" id="weightdata">
+    <button id="add">Add</button>
+
+    <h2>History</h2>
+    <div class="container">
+        <label id="data-label"></label> </div>
+
+
+    <h2>Statistics</h2>
+    <div class="timebuttons">
+        <button id="week">Week</button>
+        <button id="month">Month</button>
+        <button id="year">Year</button>
+        <button id="lifetime">Lifetime</button>
+    </div>
+    <div class="statcontainer"> </div>
+    <div class="smallcontainer"> Current weight</div>
+    <div class="smallcontainer"> Weight at the start of the period </div>
+    <div class="bigcontainer"> Progress</div>
+
 
 </body>
+
+<script src="./main.js"></script>
 
 </html>
